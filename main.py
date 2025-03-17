@@ -11,9 +11,9 @@ from config import PDF_FOLDER, OUTPUT_JSON, BATCH_SIZE
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-# Ensure the script runs only on PyTorch locally
+
 def check_pytorch():
-    if not torch.cuda.is_available() and "COLAB_GPU" in os.environ:
+    if not torch.cuda.is_available():
         raise RuntimeError("This script is restricted to local PyTorch execution and cannot run on Google Colab.")
 
 check_pytorch()
